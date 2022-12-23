@@ -8,6 +8,7 @@ __pycache__/
 #testfiles
 data_dump.py
 test.ipynb
+artifact
 # Distribution / packaging
 .Python
 build/
