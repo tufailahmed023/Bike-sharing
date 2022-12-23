@@ -18,7 +18,7 @@ class data_ingestion_input:
     def __init__(self,training_pipeline_input:training_pipeline_input):
         self.training_pipeline_input = training_pipeline_input
         #making the data_ingestion_dir
-        self.data_ingestion_dir = os.path.join(self.training_pipeline_input,"data_ingestion")
+        self.data_ingestion_dir = os.path.join(self.training_pipeline_input.artifact_dir,"data_ingestion")
         #making the data file folder
         self.data_file = os.path.join(self.data_ingestion_dir,"dataset",DATASET_NAME)
         #making the train file folder
