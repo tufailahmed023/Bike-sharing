@@ -8,7 +8,7 @@ DATASET_NAME = "bike.csv"
 TRAIN_FILE_NAME = "train.csv"
 TEST_FILE_NAME = "test.csv"
 REPORT_NAME = "report.ymal"
-
+TRANSFORMER_NAME = "transformer.pkl"
 
 class training_pipeline_input:
     def __init__(self,):
@@ -36,5 +36,14 @@ class data_validation_input:
         self.data_validation_dir = os.path.join(self.training_pipeline_input.artifact_dir,"data_validation")
         self.report  = os.path.join(self.data_validation_dir,REPORT_NAME)
         self.base_dataframe_path = os.path.join(r"C:\Users\KIIT\Desktop\Bike-sharing\day.csv")
+
+
+class data_tranformation_input:
+    def __init__(self,training_pipeline_input:training_pipeline_input):
+        self.training_pipeline_input = training_pipeline_input
+        self.data_tranformation_dir = os.path.join(self.training_pipeline_input.artifact_dir,"data_tranformation")
+        self.tranformer_path = os.path.join(self.data_tranformation_dir,"transformer",TRANSFORMER_NAME)
+        self.tranfomed_train_data = os.path.join(self.data_tranformation_dir,"tranfomed_train_data",TRAIN_FILE_NAME)
+        self.tranfomed_test_data = os.path.join(self.data_tranformation_dir,"tranfomed_test_data",TEST_FILE_NAME)
 
 

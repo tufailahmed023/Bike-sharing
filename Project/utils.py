@@ -4,6 +4,9 @@ from Project.exception import BikeException
 import pandas as pd
 from Project.config import client
 import yaml
+import dill
+from Project.config import columns_to_convert,to_convert_data
+
 
 def load_data_from_db(database,collection) -> pd.DataFrame:
 
@@ -28,5 +31,26 @@ def make_report(file_path,data:dict):
         os.makedirs(file_dir,exist_ok=True)
         with open(file_path,"w") as fw:
             yaml.dump(data, fw)
+    except Exception as e:
+        print(BikeException(e, error_detail= sys))
+
+
+def convert_columns(df:pd.DataFrame):
+    try:
+        for col in columns_to_convert:
+            df[col].replace(to_convert_data[col],inplace=True)
+        return df
+    except Exception as e:
+        print(BikeException(e, error_detail = sys))
+
+
+def save_object(file_path:str,obj:object):
+    try:
+        logging.info("Entered the save_object method of utils")
+        dir_name = os.path.dirname(file_path)
+        os.makedirs(dir_name,exist_ok=True)
+        with open(file_path,"wb") as fw:
+            dill.dump(obj, fw)
+        logging.info("Exited the save_object method of utils")
     except Exception as e:
         print(BikeException(e, error_detail= sys))
