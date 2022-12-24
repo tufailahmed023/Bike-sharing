@@ -20,13 +20,6 @@ class DataTransformation:
             print(BikeException(e, error_detail = sys))
 
 
-    #Read train and test data (Done)
-    #convert the columns to catorigal (Done)
-    #one hot encode the catorigal data (Done)
-    #scale the continous colums (Done)
-    #save the scaller object -- > pipline
-    #save the train and test data
-
     @classmethod
     def data_transformer(cls):
         try:
