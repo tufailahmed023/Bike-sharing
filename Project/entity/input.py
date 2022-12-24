@@ -35,4 +35,6 @@ class data_validation_input:
         self.training_pipeline_input = training_pipeline_input
         self.data_validation_dir = os.path.join(self.training_pipeline_input.artifact_dir,"data_validation")
         self.report  = os.path.join(self.data_validation_dir,REPORT_NAME)
+        self.base_dataframe_path = os.path.join(r"C:\Users\KIIT\Desktop\Bike-sharing\day.csv")
+
 
