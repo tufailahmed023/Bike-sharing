@@ -9,6 +9,8 @@ TRAIN_FILE_NAME = "train.csv"
 TEST_FILE_NAME = "test.csv"
 REPORT_NAME = "report.ymal"
 TRANSFORMER_NAME = "transformer.pkl"
+MODEL_NAME = "model.pkl"
+ACCURACY_REPORT_NAME  = "accuracy.ymal"
 
 class training_pipeline_input:
     def __init__(self,):
@@ -46,4 +48,11 @@ class data_tranformation_input:
         self.tranfomed_train_data = os.path.join(self.data_tranformation_dir,"tranfomed_train_data",TRAIN_FILE_NAME)
         self.tranfomed_test_data = os.path.join(self.data_tranformation_dir,"tranfomed_test_data",TEST_FILE_NAME)
 
+
+class model_training_input:
+    def __init__(self,training_pipeline_input:training_pipeline_input):
+        self.training_pipeline_input = training_pipeline_input
+        self.model_training_dir = os.path.join(self.training_pipeline_input.artifact_dir,"model_training")
+        self.model_file_path =  os.path.join(self.model_training_dir,"model",MODEL_NAME)
+        self.accuracy_report_path = os.path.join(self.model_training_dir,"accuracy",ACCURACY_REPORT_NAME)
 

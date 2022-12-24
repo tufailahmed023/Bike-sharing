@@ -40,7 +40,7 @@ class DataIngestion:
             logging.info("Splliting the data into train and test file")
             #Splliting the data into train and test file 
             train_df,test_df = train_test_split(df,test_size=self.data_ingestion_input.test_split)
-
+            logging.info(f"{(train_df.shape,test_df.shape)}")
             logging.info("making the train file dir name ")
             #making the train file dir name 
             train_dir = os.path.dirname(self.data_ingestion_input.train_file)
@@ -54,8 +54,8 @@ class DataIngestion:
             test_dir = os.path.dirname(self.data_ingestion_input.test_file)
             #making the folder if not exist
             os.makedirs(test_dir,exist_ok=True)
-            #saving the train dataset in csv
-            train_df.to_csv(path_or_buf=self.data_ingestion_input.test_file,index=False,header=True)
+            #saving the test dataset in csv
+            test_df.to_csv(path_or_buf=self.data_ingestion_input.test_file,index=False,header=True)
 
             logging.info("making the output of data ingestion")
             #making the output of data ingestion

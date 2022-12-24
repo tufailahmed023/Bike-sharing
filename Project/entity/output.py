@@ -18,3 +18,8 @@ class data_tranformation_output:
     transformed_train_dataset_path : str
     transformed_test_dataset_path : str
     
+
+@dataclass
+class model_training_output:
+    model_file_path : str
+    accuracy_report_path : str

@@ -2,11 +2,11 @@ import os , sys
 from Project.logger import logging
 from Project.exception import BikeException
 from Project.entity import input,output
-from sklearn.preprocessing import StandardScaler
+from sklearn.preprocessing import StandardScaler,MinMaxScaler
 from sklearn.pipeline import Pipeline
 import pandas as pd
 from Project import utils,config
-from Project.config import columns_to_convert
+from Project.config import columns_to_convert,columns_to_drop
 
 class DataTransformation:
     def __init__(self,data_tranformation_input:input.data_tranformation_input,
@@ -37,7 +37,7 @@ class DataTransformation:
             train_df = pd.read_csv(self.data_ingestion_output.train_file_path) 
             #reading test file
             test_df = pd.read_csv(self.data_ingestion_output.test_file_path)
-
+            logging.info(f"{(train_df.shape,test_df.shape)}")
             logging.info("Converting columns to catorigal")
             #convert columns to catorigal
             train_converted = utils.convert_columns(train_df)
@@ -66,6 +66,10 @@ class DataTransformation:
             train_converted[config.countinous_columns] = transformation_pipeline.transform(train_converted[config.countinous_columns])
             test_converted[config.countinous_columns] = transformation_pipeline.transform(test_converted[config.countinous_columns])
             logging.info("Tranforming done on both data's continous columns")
+
+            logging.info(f"Droping not needed columns : {columns_to_drop}")
+            train_converted.drop(columns_to_drop,axis=1,inplace=True)
+            test_converted.drop(columns_to_drop,axis=1,inplace=True)
 
             logging.info("Saving the tranformation object")
             #Saving the tranformation object

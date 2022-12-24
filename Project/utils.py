@@ -54,3 +54,6 @@ def save_object(file_path:str,obj:object):
         logging.info("Exited the save_object method of utils")
     except Exception as e:
         print(BikeException(e, error_detail= sys))
+
+def r2_adj(score,x_test,y_test):
+    return 1 - (1-score)*(len(y_test)-1)/(len(y_test) - x_test.shape[1]-1)
