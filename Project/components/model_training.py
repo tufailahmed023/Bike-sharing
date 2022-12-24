@@ -85,6 +85,7 @@ class ModelTraining:
 
             model_training_output = output.model_training_output(model_file_path = self.model_training_input.model_file_path, 
                                                                 accuracy_report_path = self.model_training_input.accuracy_report_path)
+            logging.info(f"Model training output : {model_training_output}")
             return model_training_output
 
         except Exception as e:
