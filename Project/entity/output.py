@@ -6,4 +6,9 @@ class data_ingestion_output:
     train_file_path : str
     test_file_path : str
 
+
+@dataclass
+class data_validation_output:
+    report_path : str
+
     

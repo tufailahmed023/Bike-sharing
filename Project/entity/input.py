@@ -7,7 +7,7 @@ from datetime import datetime
 DATASET_NAME = "bike.csv"
 TRAIN_FILE_NAME = "train.csv"
 TEST_FILE_NAME = "test.csv"
-
+REPORT_NAME = "report.ymal"
 
 
 class training_pipeline_input:
@@ -28,3 +28,11 @@ class data_ingestion_input:
         self.test_split = 0.3
         self.database_name = "bsp"
         self.collection_name = "bike"
+
+
+class data_validation_input:
+    def __init__(self,training_pipeline_input:training_pipeline_input):
+        self.training_pipeline_input = training_pipeline_input
+        self.data_validation_dir = os.path.join(self.training_pipeline_input.artifact_dir,"data_validation")
+        self.report  = os.path.join(self.data_validation_dir,REPORT_NAME)
+
