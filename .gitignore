@@ -9,6 +9,7 @@ __pycache__/
 data_dump.py
 test.ipynb
 artifact
+Saved_models
 # Distribution / packaging
 .Python
 build/
