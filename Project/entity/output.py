@@ -23,3 +23,8 @@ class data_tranformation_output:
 class model_training_output:
     model_file_path : str
     accuracy_report_path : str
+
+@dataclass
+class model_evaluatiion_output:
+    is_model_accepted:bool
+    improved_accuracy:float

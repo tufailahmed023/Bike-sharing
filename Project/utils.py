@@ -57,3 +57,13 @@ def save_object(file_path:str,obj:object):
 
 def r2_adj(score,x_test,y_test):
     return 1 - (1-score)*(len(y_test)-1)/(len(y_test) - x_test.shape[1]-1)
+
+
+def load_object(file_path: str, ) -> object:
+    try:
+        if not os.path.exists(file_path):
+            raise Exception(f"The file: {file_path} is not exists")
+        with open(file_path, "rb") as file_obj:
+            return dill.load(file_obj)
+    except Exception as e:
+        raise SensorException(e, sys) from e

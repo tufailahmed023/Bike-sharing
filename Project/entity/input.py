@@ -56,3 +56,8 @@ class model_training_input:
         self.model_file_path =  os.path.join(self.model_training_dir,"model",MODEL_NAME)
         self.accuracy_report_path = os.path.join(self.model_training_dir,"accuracy",ACCURACY_REPORT_NAME)
 
+
+class model_evaluatiion_input:
+    def __init__(self,training_pipeline_input:training_pipeline_input):
+        self.training_pipeline_input = training_pipeline_input
+        self.change_accuracy_thresholde = 0.01
