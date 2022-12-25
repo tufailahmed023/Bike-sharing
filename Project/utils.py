@@ -66,4 +66,15 @@ def load_object(file_path: str, ) -> object:
         with open(file_path, "rb") as file_obj:
             return dill.load(file_obj)
     except Exception as e:
-        raise SensorException(e, sys) from e
+         print(BikeException(e, error_detail = sys))
+
+
+def save_object(file_path: str, obj: object) -> None:
+    try:
+        logging.info("Entered the save_object method of utils")
+        os.makedirs(os.path.dirname(file_path), exist_ok=True)
+        with open(file_path, "wb") as file_obj:
+            dill.dump(obj, file_obj)
+        logging.info("Exited the save_object method of utils")
+    except Exception as e:
+         print(BikeException(e, error_detail = sys))

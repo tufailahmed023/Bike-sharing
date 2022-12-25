@@ -26,5 +26,9 @@ class model_training_output:
 
 @dataclass
 class model_evaluatiion_output:
-    is_model_accepted:bool
-    improved_accuracy:float
+    is_model_accepted : bool
+    improved_accuracy : float
+
+@dataclass
+class model_pusher_output:
+    saved_models_dir : str

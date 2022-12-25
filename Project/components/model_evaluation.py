@@ -58,7 +58,7 @@ class ModelEvaluation:
             logging.info("geting accuracy score from current model")
             transformed_features = list(transformer_cr.feature_names_in_)
             test_cr = test_df
-            test_cr[transformed_features] = transformer_cr.tranform(test_cr[transformed_features])
+            test_cr[transformed_features] = transformer_cr.transform(test_cr[transformed_features])
             y_pred_cr = model_cr.predict(test_cr)
             current_model_score = r2_score(traget_df, y_pred_cr)
             logging.info(f"Current model R2 score is  : {current_model_score}")
@@ -66,7 +66,7 @@ class ModelEvaluation:
             logging.info("getting accuracy score from saved model folder model/previous model")
             transformed_features = list(transformer_sm.feature_names_in_)
             test_sm = test_df
-            test_sm[transformed_features] = transformer_sm.tranform(test_sm[transformed_features])
+            test_sm[transformed_features] = transformer_sm.transform(test_sm[transformed_features])
             y_pred_sm = model_sm.predict(test_sm)
             previous_model_score = r2_score(traget_df, y_pred_sm)
             logging.info(f"Previous model R2 score is  : {previous_model_score}")

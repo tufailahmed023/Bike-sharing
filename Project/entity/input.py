@@ -61,3 +61,8 @@ class model_evaluatiion_input:
     def __init__(self,training_pipeline_input:training_pipeline_input):
         self.training_pipeline_input = training_pipeline_input
         self.change_accuracy_thresholde = 0.01
+
+
+class model_pusher_input:
+    def __init__(self,training_pipeline_input:training_pipeline_input):
+        self.Saved_models_dir = os.path.join("Saved_models")
