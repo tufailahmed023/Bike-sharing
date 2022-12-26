@@ -7,4 +7,3 @@ pymongo == 4.3.3
 PyYAML==6.0
 dill==0.3.6
 python-dotenv
--e .

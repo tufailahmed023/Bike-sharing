@@ -46,13 +46,13 @@ class DataTransformation:
             logging.info("One hot encoding Train data")
             #onehot encoding
             #train data
-            train_converted = pd.get_dummies(data = train_converted, columns=columns_to_convert[:-1],drop_first=True)
-            train_converted = pd.get_dummies(data = train_converted, columns=[columns_to_convert[-1]],drop_first=True)
+            train_converted = pd.get_dummies(data = train_converted, columns=columns_to_convert[:-1],drop_first=False)
+            train_converted = pd.get_dummies(data = train_converted, columns=[columns_to_convert[-1]],drop_first=False)
 
             logging.info("One hot encoding Test data")
             #test data
-            test_converted = pd.get_dummies(data = test_converted, columns=columns_to_convert[:-1],drop_first=True)
-            test_converted = pd.get_dummies(data = test_converted, columns=[columns_to_convert[-1]],drop_first=True)
+            test_converted = pd.get_dummies(data = test_converted, columns=columns_to_convert[:-1],drop_first=False)
+            test_converted = pd.get_dummies(data = test_converted, columns=[columns_to_convert[-1]],drop_first=False)
 
             logging.info("Scaling the data")
             #Scaling the data
