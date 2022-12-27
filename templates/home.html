@@ -1,0 +1,65 @@
+<html lang="en">
+
+<h1>Bike Sharing Prediction</h1>
+<form action="{{ url_for('predict')}}"method="post">
+    <input type="text" name="year" placeholder="year" required="required" /><br>
+    <h5 class="card-title">holiday</h5>
+    <select name="holiday" id = "holiday" required="required" >
+        <option value="Yes">Yes</option>
+        <option value="No">No</option>
+    </select><br>
+    <h5 class="card-title">workingday</h5>
+    <select name="workingday" required="required" >
+        <option value="Yes">Yes</option>
+        <option value="No">No</option>
+    </select><br>
+    <br>
+    <br>
+    <input type="number" name="temp" placeholder="temp" required="required" /><br>
+    <input type="number" name="atemp" placeholder="atemp" required="required" /><br>
+    <input type="number" name="hum" placeholder="hum" required="required" /><br>
+    <input type="number" name="windspeed" placeholder="windspeed" required="required" /><br>
+    <h5 class="card-title">season</h5>
+    <select name="season" required="required" >
+        <option value="Fall">Fall</option>
+        <option value="Sprint">Sprint</option>
+        <option value="Summer">Summer</option>
+        <option value="Winter">Winter</option>
+    </select> <br>
+    <h5 class="card-title">Months</h5>
+    <select name = "months" required = "required">
+        <option value="January">January</option>
+        <option value="February">February</option>
+        <option value="March">March</option>
+        <option value="April">April</option>
+        <option value="May">May</option>
+        <option value="June">June</option>
+        <option value="July">July</option>
+        <option value="August">August</option>
+        <option value="September">September</option>
+        <option value="October">October</option>
+        <option value="November">November</option>
+        <option value="December">December</option>
+    </select><br>
+    <h5 class="card-title">weekday</h5>
+    <select name="weekday" required="required" >
+        <option value="Monday">Monday</option>
+        <option value="Tuesday">Tuesday</option>
+        <option value="Wednesday">Wednesday</option>
+        <option value="Thursday">Thursday</option>
+        <option value="Friday">Friday</option>
+        <option value="Saturday">Saturday</option>
+        <option value="Sunday">Sunday</option>
+    </select><br>
+    <h5 class="card-title">weather</h5>
+    <select name="weather" required="required" >
+        <option value="Good">Good</option>
+        <option value="Modrate">Modrate</option>
+        <option value="Bad">Bad</option>
+    </select><br>
+    <br>
+    <br>
+    <button type="submit" class="btn btn-primary btn-block btn-large">Predict</button>
+  </form>
+</html>
+{{predicition_text }}

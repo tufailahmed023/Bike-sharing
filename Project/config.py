@@ -26,6 +26,14 @@ to_convert_data = {'mnth' : {1:"jan",2:"feb",3:"mar",4:"apr",5:'may',6:"jun",7:"
 
 
 
+columns_after_transformation =['yr', 'holiday', 'workingday', 'temp', 'atemp', 'hum', 'windspeed',
+       'season_fall', 'season_spring', 'season_summer', 'season_winter',
+       'mnth_apr', 'mnth_aug', 'mnth_dec', 'mnth_feb', 'mnth_jan', 'mnth_jul',
+       'mnth_jun', 'mnth_mar', 'mnth_may', 'mnth_nov', 'mnth_oct', 'mnth_sep',
+       'weekday_fri', 'weekday_mon', 'weekday_sat', 'weekday_sun',
+       'weekday_thu', 'weekday_tue', 'weekday_wed', 'weathersit_bad',
+       'weathersit_good', 'weathersit_modrate']
+
 Months = {
 'January': [0,0,0,0,1,0,0,0,0,0,0,0],
 'February': [0,0,0,1,0,0,0,0,0,0,0,0],
@@ -65,3 +73,14 @@ Weather = {
     "Modrate" : [0,0,1],
     "Bad" : [1,0,0]
 }
+
+Year = {
+    2011 : 1,
+    2012 :2
+}
+
+boll_deci = {
+    "Yes" : 1,
+    "No" : 0
+}
+

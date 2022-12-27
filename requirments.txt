@@ -7,3 +7,8 @@ pymongo == 4.3.3
 PyYAML==6.0
 dill==0.3.6
 python-dotenv
+Flask==2.0.1
+PyJWT==2.1.0
+Flask_JWT_Extended==4.2.1
+Flask-AppBuilder == 4.1.6
+Flask-Cors
